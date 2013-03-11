@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.forecast.io/forecast/this-is-an-api-key/37.8267,-122.423,1362974400
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.1.19
+      Date:
+      - Mon, 11 Mar 2013 23:23:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '5715'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Cache-Control:
+      - max-age=31536000
+      Expires:
+      - Tue, 11 Mar 2014 23:23:41 +0000
+      ETag:
+      - ! '"907190395"'
+      X-Response-Time:
+      - 215ms
+    body:
+      encoding: US-ASCII
+      string: ! '{"latitude":37.8267,"longitude":-122.423,"timezone":"Etc/GMT+8","offset":-8,"currently":{"time":1362974400,"summary":"Clear","icon":"clear-night","precipIntensity":0,"temperature":51.3,"windSpeed":4.68,"windBearing":223,"cloudCover":0.13,"humidity":0.8,"pressure":1015.98,"visibility":7.16},"hourly":{"summary":"Foggy
+        in the morning.","icon":"fog","data":[{"time":1362902400,"summary":"Partly
+        Cloudy","icon":"partly-cloudy-night","precipIntensity":0,"temperature":45.21,"windSpeed":5.96,"windBearing":250,"cloudCover":0.23,"humidity":0.83,"pressure":1016.66},{"time":1362906000,"summary":"Partly
+        Cloudy","icon":"partly-cloudy-night","precipIntensity":0,"temperature":43.87,"windSpeed":5.57,"windBearing":252,"cloudCover":0.46,"humidity":0.85,"pressure":1016.7,"visibility":6},{"time":1362909600,"summary":"Partly
+        Cloudy","icon":"partly-cloudy-night","precipIntensity":0,"temperature":42.58,"windSpeed":4.96,"windBearing":247,"cloudCover":0.48,"humidity":0.88,"pressure":1016.63,"visibility":4},{"time":1362913200,"summary":"Clear","icon":"clear-night","precipIntensity":0,"temperature":41.32,"windSpeed":4.35,"windBearing":242,"cloudCover":0.19,"humidity":0.89,"pressure":1016.53,"visibility":4},{"time":1362916800,"summary":"Foggy","icon":"fog","precipIntensity":0,"temperature":40.21,"windSpeed":3.85,"windBearing":237,"cloudCover":0.12,"humidity":0.91,"pressure":1016.45,"visibility":0.25},{"time":1362920400,"summary":"Foggy","icon":"fog","precipIntensity":0,"temperature":40.18,"windSpeed":3.6,"windBearing":234,"cloudCover":0.12,"humidity":0.91,"pressure":1016.64,"visibility":0.25},{"time":1362924000,"summary":"Foggy","icon":"fog","precipIntensity":0,"temperature":40.69,"windSpeed":3.55,"windBearing":229,"cloudCover":0.2,"humidity":0.91,"pressure":1016.96,"visibility":0.25},{"time":1362927600,"summary":"Foggy","icon":"fog","precipIntensity":0,"temperature":42.03,"windSpeed":3.48,"windBearing":221,"cloudCover":0.13,"humidity":0.89,"pressure":1017.27,"visibility":0.25},{"time":1362931200,"summary":"Foggy","icon":"fog","precipIntensity":0,"temperature":46.68,"windSpeed":3.33,"windBearing":224,"cloudCover":0.13,"humidity":0.84,"pressure":1017.57,"visibility":0.25},{"time":1362934800,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":52.49,"windSpeed":3.45,"windBearing":225,"cloudCover":0.13,"humidity":0.76,"pressure":1017.82,"visibility":4},{"time":1362938400,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":57.49,"windSpeed":3.52,"windBearing":227,"cloudCover":0.13,"humidity":0.68,"pressure":1017.99},{"time":1362942000,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":60.88,"windSpeed":4.12,"windBearing":235,"cloudCover":0.13,"humidity":0.6,"pressure":1017.93},{"time":1362945600,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":63.41,"windSpeed":4.76,"windBearing":236,"cloudCover":0.13,"humidity":0.55,"pressure":1017.78},{"time":1362949200,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":65.26,"windSpeed":5.34,"windBearing":239,"cloudCover":0.13,"humidity":0.51,"pressure":1017.56},{"time":1362952800,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":65.85,"windSpeed":6.44,"windBearing":226,"cloudCover":0.13,"humidity":0.48,"pressure":1017.09},{"time":1362956400,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":65.97,"windSpeed":6.99,"windBearing":226,"cloudCover":0.11,"humidity":0.49,"pressure":1016.33,"visibility":16.33},{"time":1362960000,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":63.74,"windSpeed":7.09,"windBearing":235,"cloudCover":0.04,"humidity":0.51,"pressure":1015.83,"visibility":16.45},{"time":1362963600,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":60.56,"windSpeed":7.07,"windBearing":237,"cloudCover":0.19,"humidity":0.54,"pressure":1015.67,"visibility":14.92},{"time":1362967200,"summary":"Clear","icon":"clear-day","precipIntensity":0,"temperature":56.87,"windSpeed":6.28,"windBearing":236,"cloudCover":0.19,"humidity":0.62,"pressure":1015.7,"visibility":11.23},{"time":1362970800,"summary":"Clear","icon":"clear-night","precipIntensity":0,"temperature":53.2,"windSpeed":5.9,"windBearing":227,"cloudCover":0.18,"humidity":0.76,"pressure":1015.82,"visibility":7.93},{"time":1362974400,"summary":"Clear","icon":"clear-night","precipIntensity":0,"temperature":51.3,"windSpeed":4.68,"windBearing":223,"cloudCover":0.13,"humidity":0.8,"pressure":1015.98,"visibility":7.16},{"time":1362978000,"summary":"Clear","icon":"clear-night","precipIntensity":0,"temperature":49.98,"windSpeed":4.1,"windBearing":230,"cloudCover":0.11,"humidity":0.83,"pressure":1015.76,"visibility":6.4},{"time":1362981600,"summary":"Clear","icon":"clear-night","precipIntensity":0,"temperature":49.08,"windSpeed":3.61,"windBearing":250,"cloudCover":0.11,"humidity":0.84,"pressure":1015.75,"visibility":6.66},{"time":1362985200,"summary":"Clear","icon":"clear-night","precipIntensity":0,"temperature":48.43,"windSpeed":3.6,"windBearing":262,"cloudCover":0.16,"humidity":0.85,"pressure":1015.68,"visibility":6.61}]},"daily":{"data":[{"time":1362902400,"summary":"Foggy
+        in the morning.","icon":"fog","sunriseTime":1362839437,"sunsetTime":1362881546,"precipIntensity":0,"temperatureMin":40.18,"temperatureMinTime":1362920400,"temperatureMax":65.97,"temperatureMaxTime":1362956400,"windSpeed":4.82,"windBearing":235,"cloudCover":0.17,"humidity":0.74,"pressure":1016.67,"visibility":6.27}]},"flags":{"sources":["lamp","isd","fnmoc","naefs","rap","nam","cmc","gfs"],"lamp-stations":["KAPC","KSFO","KSTS"],"isd-stations":["724943-99999","745039-99999","745065-99999","994016-99999","999999-23272"]}}'
+    http_version: '1.1'
+  recorded_at: Mon, 11 Mar 2013 23:23:39 GMT
+recorded_with: VCR 2.4.0
