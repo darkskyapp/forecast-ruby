@@ -35,7 +35,6 @@ describe Forecast::IO do
         forecast.longitude.should == -122.423
         forecast.daily.size.should == 3
         forecast.alerts.should be_nil
-        p forecast
       end
     end
   end
