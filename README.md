@@ -32,10 +32,9 @@ Alternatively:
 
 ```ruby
 Forecast::IO.api_key = 'this-is-your-api-key'
-end
 ```
 
-You can then make requests to the `Forecast::IO.forecast(latitude, longitide, options = {})` method. For example:
+You can then make requests to the `Forecast::IO.forecast(latitude, longitide, options = {})` method.
 
 Valid options in the `options` hash are:
 
