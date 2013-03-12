@@ -10,6 +10,11 @@ module Forecast
     extend Configuration
 
     class << self
+      # Retrieve the forecast for a given latitude and longitude.
+      #
+      # @param latitude [String] Latitude.
+      # @param longitude [String] Longitude.
+      # @param options [String] Optional parameters. Valid options are `:time` and `:params`.
       def forecast(latitude, longitude, options = {})
         forecast_url = "#{Forecast::IO.api_endpoint}/forecast/#{Forecast::IO.api_key}/#{latitude},#{longitude}"
         forecast_url += ",#{options[:time]}" if options[:time]
