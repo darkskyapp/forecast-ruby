@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = Forecast::IO::VERSION
   s.authors     = ["David Czarnecki"]
   s.email       = ["me@davidczarnecki.com"]
-  s.homepage    = "https://github.com/darkskyapp/forecast.io-ruby"
+  s.homepage    = "https://github.com/darkskyapp/forecast-ruby"
   s.summary     = %q{forecast.io API wrapper in Ruby}
   s.description = %q{forecast.io API wrapper in Ruby}
 
