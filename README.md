@@ -41,7 +41,7 @@ Valid options in the `options` hash are:
 * `:time` - UNIX time in seconds since the Unix epoch.
 * `:params` - Query parameters that can contain the following:
   * `:jsonp` - JSONP callback.
-  * `:si` - Return the API response in SI units, rather than the default Imperial units.
+  * `:units` - Return the API response in SI units, rather than the default Imperial units.
 
 Get the current forecast:
 
@@ -58,7 +58,7 @@ forecast = Forecast::IO.forecast('37.8267','-122.423', time: Time.new(2013, 3, 1
 Get the current forecast and use SI units:
 
 ```ruby
-forecast = Forecast::IO.forecast('37.8267','-122.423', params: {si: true})
+forecast = Forecast::IO.forecast('37.8267','-122.423', params: {units: 'si'})
 ```
 
 The `forecast(...)` method will return a response that you can interact with in a more-friendly way, such as:
