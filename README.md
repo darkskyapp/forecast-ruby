@@ -42,6 +42,7 @@ Valid options in the `options` hash are:
 * `:params` - Query parameters that can contain the following:
   * `:jsonp` - JSONP callback.
   * `:units` - Return the API response in SI units, rather than the default Imperial units.
+  * `:exclude` - "Exclude some number of data blocks from the API response. This is useful for reducing latency and saving cache space. [blocks] should be a comma-delimeted list (without spaces) of any of the following: currently, minutely, hourly, daily, alerts, flags." (via [v2 docs](https://developer.forecast.io/docs/v2#changelog))
 
 Get the current forecast:
 
