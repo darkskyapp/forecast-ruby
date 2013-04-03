@@ -3,7 +3,7 @@ require 'forecast_io/version'
 
 require 'hashie'
 require 'multi_json'
-require 'typhoeus'
+require 'faraday'
 
 module Forecast
   module IO
@@ -20,14 +20,26 @@ module Forecast
         forecast_url += ",#{options[:time]}" if options[:time]
 
         forecast_response = if options[:params]
-          Typhoeus::Request.get(forecast_url, params: options[:params])
+          connection.get(forecast_url, options[:params])
         else
-          Typhoeus::Request.get(forecast_url)
+          connection.get(forecast_url)
         end
 
         if forecast_response.success?
           return Hashie::Mash.new(MultiJson.load(forecast_response.body))
         end
+      end
+
+      # Build or get an HTTP connection object.
+      def connection
+        @connection ||= Faraday.new
+      end
+
+      # Set an HTTP connection object.
+      #
+      # @param connection Connection object to be used.
+      def connection=(connection)
+        @connection = connection
       end
     end
   end
