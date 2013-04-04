@@ -17,7 +17,7 @@ describe Forecast::IO do
     it 'should return a forecast for a given latitude, longitude and time' do
       VCR.use_cassette('forecast_for_latitude_longitide_and_time') do
         Forecast::IO.api_key = 'this-is-an-api-key'
-        forecast = Forecast::IO.forecast('37.8267','-122.423', time: Time.new(2013, 3, 11).to_i)
+        forecast = Forecast::IO.forecast('37.8267','-122.423', time: Time.utc(2013, 3, 11, 4).to_i)
         forecast.should_not be_nil
         forecast.latitude.should == 37.8267
         forecast.longitude.should == -122.423
