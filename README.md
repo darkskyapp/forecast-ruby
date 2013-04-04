@@ -38,7 +38,7 @@ You can then make requests to the `Forecast::IO.forecast(latitude, longitide, op
 
 Valid options in the `options` hash are:
 
-* `:time` - UNIX time in seconds since the Unix epoch.
+* `:time` - Unix time in seconds.
 * `:params` - Query parameters that can contain the following:
   * `:jsonp` - JSONP callback.
   * `:units` - Return the API response in SI units, rather than the default Imperial units.
@@ -47,30 +47,48 @@ Valid options in the `options` hash are:
 Get the current forecast:
 
 ```ruby
-forecast = Forecast::IO.forecast('37.8267','-122.423')
+forecast = Forecast::IO.forecast(37.8267, -122.423)
 ```
 
 Get the current forecast at a given time:
 
 ```ruby
-forecast = Forecast::IO.forecast('37.8267','-122.423', time: Time.new(2013, 3, 11).to_i)
+forecast = Forecast::IO.forecast(37.8267, -122.423, time: Time.new(2013, 3, 11).to_i)
 ```
 
 Get the current forecast and use SI units:
 
 ```ruby
-forecast = Forecast::IO.forecast('37.8267','-122.423', params: {units: 'si'})
+forecast = Forecast::IO.forecast(37.8267, -122.423, params: { units: 'si' })
 ```
 
 The `forecast(...)` method will return a response that you can interact with in a more-friendly way, such as:
 
 ```ruby
-forecast = Forecast::IO.forecast('37.8267','-122.423')
+forecast = Forecast::IO.forecast(37.8267, -122.423)
 forecast.latitude
 forecast.longitude
 ```
 
 Please refer to the [forecast.io](https://developer.darkskyapp.com/docs/v2) API documentation for more information on the full response properties.
+
+The HTTP requests are made with [Faraday](https://github.com/lostisland/faraday), which uses `Net::HTTP` by default. Changing the adapter is easy:
+
+```ruby
+require 'typhoeus/adapters/faraday'
+
+Faraday.default_adapter = :typhoeus
+```
+
+Alternatively:
+
+```ruby
+require 'typhoeus/adapters/faraday'
+
+Forecast::IO.connection = Faraday.new do |builder|
+  builder.adapter :typhoeus
+end
+```
 
 ## Contributing to forecast_io
 
