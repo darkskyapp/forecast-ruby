@@ -72,7 +72,13 @@ forecast.longitude
 
 Please refer to the [forecast.io](https://developer.darkskyapp.com/docs/v2) API documentation for more information on the full response properties.
 
-The HTTP requests are made with [Faraday](https://github.com/lostisland/faraday), which uses `Net::HTTP` by default. Changing the adapter is easy:
+The HTTP requests are made with [Faraday](https://github.com/lostisland/faraday), which uses `Net::HTTP` by default. Changing the adapter is easy. We will use typhoeus as an example.
+
+Make sure to include the typhoeus gem in your `Gemfile`:
+
+```ruby
+gem 'typhoeus'
+```
 
 ```ruby
 require 'typhoeus/adapters/faraday'
