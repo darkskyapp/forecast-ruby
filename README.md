@@ -34,7 +34,7 @@ Alternatively:
 Forecast::IO.api_key = 'this-is-your-api-key'
 ```
 
-You can then make requests to the `Forecast::IO.forecast(latitude, longitide, options = {})` method.
+You can then make requests to the `Forecast::IO.forecast(latitude, longitude, options = {})` method.
 
 Valid options in the `options` hash are:
 

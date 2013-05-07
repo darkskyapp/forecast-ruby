@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Forecast::IO do
   describe '.forecast' do
     it 'should return a forecast for a given latitude, longitude' do
-      VCR.use_cassette('forecast_for_latitude_longitide', record: :once) do
+      VCR.use_cassette('forecast_for_latitude_longitude', record: :once) do
         Forecast::IO.api_key = 'this-is-an-api-key'
         forecast = Forecast::IO.forecast('37.8267','-122.423')
         forecast.should_not be_nil
@@ -15,7 +15,7 @@ describe Forecast::IO do
     end
 
     it 'should return a forecast for a given latitude, longitude and time' do
-      VCR.use_cassette('forecast_for_latitude_longitide_and_time') do
+      VCR.use_cassette('forecast_for_latitude_longitude_and_time') do
         Forecast::IO.api_key = 'this-is-an-api-key'
         forecast = Forecast::IO.forecast('37.8267','-122.423', time: Time.utc(2013, 3, 11, 4).to_i)
         forecast.should_not be_nil
@@ -27,7 +27,7 @@ describe Forecast::IO do
     end
 
     it 'should return a forecast for a given latitude, longitude and query params' do
-      VCR.use_cassette('forecast_for_latitude_longitide_and_query_params') do
+      VCR.use_cassette('forecast_for_latitude_longitude_and_query_params') do
         Forecast::IO.api_key = 'this-is-an-api-key'
         forecast = Forecast::IO.forecast('37.8267','-122.423', params: {units: 'si'})
         forecast.should_not be_nil
