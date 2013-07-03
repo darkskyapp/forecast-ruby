@@ -21,7 +21,7 @@ module Forecast
         forecast_url = "#{Forecast::IO.api_endpoint}/forecast/#{Forecast::IO.api_key}/#{latitude},#{longitude}"
         forecast_url += ",#{options[:time]}" if options[:time]
 
-        forecast_response = get forecast_url, options[:params]
+        forecast_response = get(forecast_url, options[:params])
 
         if forecast_response.success?
           return Hashie::Mash.new(MultiJson.load(forecast_response.body))
@@ -43,9 +43,9 @@ module Forecast
       private
 
       def get(path, params = {})
-        params = Forecast::IO.default_params.merge params || {}
+        params = Forecast::IO.default_params.merge(params || {})
 
-        connection.get path, params
+        connection.get(path, params)
       end
     end
   end
