@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'Forecast::IO::VERSION' do
+describe 'ForecastIO::VERSION' do
   it 'should be the correct version' do
-    Forecast::IO::VERSION.should == '1.2.0'
+    ForecastIO::VERSION.should == '1.2.0'
   end
 end
