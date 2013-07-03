@@ -9,6 +9,8 @@ module Forecast
   module IO
     extend Configuration
 
+    self.default_params = {}
+
     class << self
       # Retrieve the forecast for a given latitude and longitude.
       #
@@ -19,11 +21,7 @@ module Forecast
         forecast_url = "#{Forecast::IO.api_endpoint}/forecast/#{Forecast::IO.api_key}/#{latitude},#{longitude}"
         forecast_url += ",#{options[:time]}" if options[:time]
 
-        forecast_response = if options[:params]
-          connection.get(forecast_url, options[:params])
-        else
-          connection.get(forecast_url)
-        end
+        forecast_response = get(forecast_url, options[:params])
 
         if forecast_response.success?
           return Hashie::Mash.new(MultiJson.load(forecast_response.body))
@@ -40,6 +38,14 @@ module Forecast
       # @param connection Connection object to be used.
       def connection=(connection)
         @connection = connection
+      end
+
+      private
+
+      def get(path, params = {})
+        params = Forecast::IO.default_params.merge(params || {})
+
+        connection.get(path, params)
       end
     end
   end

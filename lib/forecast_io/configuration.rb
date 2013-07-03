@@ -10,6 +10,9 @@ module Forecast
       # API key
       attr_writer :api_key
 
+      # Default parameters
+      attr_accessor :default_params
+
       # Yield self to be able to configure Forecast::IO with block-style configuration.
       #
       # Example:
