@@ -1,5 +1,4 @@
 require 'forecast_io/configuration'
-require 'forecast_io/version'
 
 require 'hashie'
 require 'multi_json'
