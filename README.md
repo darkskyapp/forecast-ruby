@@ -96,6 +96,18 @@ Forecast::IO.connection = Faraday.new do |builder|
 end
 ```
 
+You can also customise the default parameters passed through on each API call:
+
+```ruby
+Forecast::IO.default_params = {units: 'si'}
+
+# or
+
+Forecast::IO.configure do |configuration|
+  configuration.default_params = {units: 'si'}
+end
+```
+
 ## Contributing to forecast_io
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
