@@ -23,7 +23,7 @@ require 'forecast_io'
 You will need to set your API key before you can make requests to the [forecast.io](https://developer.darkskyapp.com/docs/v2) API.
 
 ```ruby
-Forecast::IO.configure do |configuration|
+ForecastIO.configure do |configuration|
   configuration.api_key = 'this-is-your-api-key'
 end
 ```
@@ -31,10 +31,10 @@ end
 Alternatively:
 
 ```ruby
-Forecast::IO.api_key = 'this-is-your-api-key'
+ForecastIO.api_key = 'this-is-your-api-key'
 ```
 
-You can then make requests to the `Forecast::IO.forecast(latitude, longitude, options = {})` method.
+You can then make requests to the `ForecastIO.forecast(latitude, longitude, options = {})` method.
 
 Valid options in the `options` hash are:
 
@@ -47,25 +47,25 @@ Valid options in the `options` hash are:
 Get the current forecast:
 
 ```ruby
-forecast = Forecast::IO.forecast(37.8267, -122.423)
+forecast = ForecastIO.forecast(37.8267, -122.423)
 ```
 
 Get the current forecast at a given time:
 
 ```ruby
-forecast = Forecast::IO.forecast(37.8267, -122.423, time: Time.new(2013, 3, 11).to_i)
+forecast = ForecastIO.forecast(37.8267, -122.423, time: Time.new(2013, 3, 11).to_i)
 ```
 
 Get the current forecast and use SI units:
 
 ```ruby
-forecast = Forecast::IO.forecast(37.8267, -122.423, params: { units: 'si' })
+forecast = ForecastIO.forecast(37.8267, -122.423, params: { units: 'si' })
 ```
 
 The `forecast(...)` method will return a response that you can interact with in a more-friendly way, such as:
 
 ```ruby
-forecast = Forecast::IO.forecast(37.8267, -122.423)
+forecast = ForecastIO.forecast(37.8267, -122.423)
 forecast.latitude
 forecast.longitude
 ```
@@ -91,7 +91,7 @@ Alternatively:
 ```ruby
 require 'typhoeus/adapters/faraday'
 
-Forecast::IO.connection = Faraday.new do |builder|
+ForecastIO.connection = Faraday.new do |builder|
   builder.adapter :typhoeus
 end
 ```
@@ -99,11 +99,11 @@ end
 You can also customise the default parameters passed through on each API call:
 
 ```ruby
-Forecast::IO.default_params = {units: 'si'}
+ForecastIO.default_params = {units: 'si'}
 
 # or
 
-Forecast::IO.configure do |configuration|
+ForecastIO.configure do |configuration|
   configuration.default_params = {units: 'si'}
 end
 ```

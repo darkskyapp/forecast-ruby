@@ -16,6 +16,6 @@ Faraday.default_adapter = :typhoeus
 
 RSpec.configure do |config|
   config.before(:each) do
-    Forecast::IO.api_key = nil
+    ForecastIO.api_key = nil
   end
 end
