@@ -5,7 +5,7 @@ require 'forecast_io/version'
 
 Gem::Specification.new do |s|
   s.name        = "forecast_io"
-  s.version     = Forecast::IO::VERSION
+  s.version     = ForecastIO::VERSION
   s.authors     = ["David Czarnecki"]
   s.email       = ["me@davidczarnecki.com"]
   s.homepage    = "https://github.com/darkskyapp/forecast-ruby"

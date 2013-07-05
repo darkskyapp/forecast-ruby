@@ -1,38 +1,36 @@
-module Forecast
-  module IO
-    module Configuration
-      # Default API endpoint
-      DEFAULT_FORECAST_IO_API_ENDPOINT = 'https://api.forecast.io'
+module ForecastIO
+  module Configuration
+    # Default API endpoint
+    DEFAULT_FORECAST_IO_API_ENDPOINT = 'https://api.forecast.io'
 
-      # Forecast API endpoint
-      attr_writer :api_endpoint
+    # Forecast API endpoint
+    attr_writer :api_endpoint
 
-      # API key
-      attr_writer :api_key
+    # API key
+    attr_writer :api_key
 
-      # Default parameters
-      attr_accessor :default_params
+    # Default parameters
+    attr_accessor :default_params
 
-      # Yield self to be able to configure Forecast::IO with block-style configuration.
-      #
-      # Example:
-      #
-      #   Forecast::IO.configure do |configuration|
-      #     configuration.api_key = 'this-is-your-api-key'
-      #   end
-      def configure
-        yield self
-      end
+    # Yield self to be able to configure ForecastIO with block-style configuration.
+    #
+    # Example:
+    #
+    #   ForecastIO.configure do |configuration|
+    #     configuration.api_key = 'this-is-your-api-key'
+    #   end
+    def configure
+      yield self
+    end
 
-      # API endpoint
-      def api_endpoint
-        @api_endpoint ||= DEFAULT_FORECAST_IO_API_ENDPOINT
-      end
+    # API endpoint
+    def api_endpoint
+      @api_endpoint ||= DEFAULT_FORECAST_IO_API_ENDPOINT
+    end
 
-      # API key
-      def api_key
-        @api_key
-      end
+    # API key
+    def api_key
+      @api_key
     end
   end
 end
