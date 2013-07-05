@@ -52,60 +52,60 @@ describe ForecastIO do
       before :each do
         stub_const 'Faraday', stub(new: faraday)
 
-        ForecastIO.stub api_key: 'abc123', connection: faraday
+        ForecastIO.stub(api_key: 'abc123', connection: faraday)
       end
 
       context 'without default parameters' do
         before :each do
-          ForecastIO.stub default_params: {}
+          ForecastIO.stub(default_params: {})
         end
 
         it "sends through a standard request" do
           faraday.should_receive(:get).with(
             'https://api.forecast.io/forecast/abc123/1.2,3.4', {}
-          ).and_return response
+          ).and_return(response)
 
-          ForecastIO.forecast 1.2, 3.4
+          ForecastIO.forecast(1.2, 3.4)
         end
 
         it "sends through provided parameters" do
           faraday.should_receive(:get).with(
             'https://api.forecast.io/forecast/abc123/1.2,3.4', {units: 'si'}
-          ).and_return response
+          ).and_return(response)
 
-          ForecastIO.forecast 1.2, 3.4, params: {units: 'si'}
+          ForecastIO.forecast(1.2, 3.4, params: {units: 'si'})
         end
       end
 
       context 'with default parameters' do
         before :each do
-          ForecastIO.stub default_params: {units: 'si'}
+          ForecastIO.stub(default_params: {units: 'si'})
         end
 
         it "sends through the default parameters" do
           faraday.should_receive(:get).with(
             'https://api.forecast.io/forecast/abc123/1.2,3.4', {units: 'si'}
-          ).and_return response
+          ).and_return(response)
 
-          ForecastIO.forecast 1.2, 3.4
+          ForecastIO.forecast(1.2, 3.4)
         end
 
         it "sends through the merged parameters" do
           faraday.should_receive(:get).with(
             'https://api.forecast.io/forecast/abc123/1.2,3.4',
             {units: 'si', exclude: 'daily'}
-          ).and_return response
+          ).and_return(response)
 
-          ForecastIO.forecast 1.2, 3.4, params: {exclude: 'daily'}
+          ForecastIO.forecast(1.2, 3.4, params: {exclude: 'daily'})
         end
 
         it "overwrites default parameters when appropriate" do
           faraday.should_receive(:get).with(
             'https://api.forecast.io/forecast/abc123/1.2,3.4',
             {units: 'imperial'}
-          ).and_return response
+          ).and_return(response)
 
-          ForecastIO.forecast 1.2, 3.4, params: {units: 'imperial'}
+          ForecastIO.forecast(1.2, 3.4, params: {units: 'imperial'})
         end
       end
     end
