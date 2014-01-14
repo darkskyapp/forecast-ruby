@@ -50,7 +50,7 @@ describe ForecastIO do
       let(:response) { double 'Response', success?: true, body: '{}' }
 
       before :each do
-        stub_const 'Faraday', stub(new: faraday)
+        stub_const 'Faraday', double(new: faraday)
 
         ForecastIO.stub(api_key: 'abc123', connection: faraday)
       end
