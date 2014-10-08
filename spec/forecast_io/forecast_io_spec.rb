@@ -18,7 +18,7 @@ describe ForecastIO do
         forecast.should_not be_nil
         forecast.latitude.should == 37.8267
         forecast.longitude.should == -122.423
-        forecast.daily.size.should == 3
+        forecast.daily.to_h.size.should == 3
         forecast.alerts.should be_nil
       end
     end
@@ -29,7 +29,7 @@ describe ForecastIO do
         forecast.should_not be_nil
         forecast.latitude.should == 37.8267
         forecast.longitude.should == -122.423
-        forecast.daily.size.should == 1
+        forecast.daily.to_h.size.should == 1
         forecast.alerts.should be_nil
       end
     end
@@ -40,7 +40,7 @@ describe ForecastIO do
         forecast.should_not be_nil
         forecast.latitude.should == 37.8267
         forecast.longitude.should == -122.423
-        forecast.daily.size.should == 3
+        forecast.daily.to_h.size.should == 3
         forecast.alerts.should be_nil
       end
     end

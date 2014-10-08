@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency('faraday')
   s.add_dependency('multi_json')
-  s.add_dependency('hashie')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec')
