@@ -1,7 +1,7 @@
 require 'forecast_io/configuration'
 require 'forecast_io/version'
+require 'forecast_io/deep_struct'
 
-require 'hashie'
 require 'multi_json'
 require 'faraday'
 
@@ -23,7 +23,7 @@ module ForecastIO
       forecast_response = get(forecast_url, options[:params])
 
       if forecast_response.success?
-        return Hashie::Mash.new(MultiJson.load(forecast_response.body))
+        return DeepStruct.new(MultiJson.load(forecast_response.body))
       end
     end
 
