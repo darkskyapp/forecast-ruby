@@ -62,7 +62,7 @@ describe ForecastIO do
 
         it "sends through a standard request" do
           expect(faraday).to receive(:get).with(
-            'https://api.forecast.io/forecast/abc123/1.2,3.4', {}
+            'https://api.darksky.net/forecast/abc123/1.2,3.4', {}
           ).and_return(response)
 
           ForecastIO.forecast(1.2, 3.4)
@@ -70,7 +70,7 @@ describe ForecastIO do
 
         it "sends through provided parameters" do
           expect(faraday).to receive(:get).with(
-            'https://api.forecast.io/forecast/abc123/1.2,3.4', {units: 'si'}
+            'https://api.darksky.net/forecast/abc123/1.2,3.4', {units: 'si'}
           ).and_return(response)
 
           ForecastIO.forecast(1.2, 3.4, params: {units: 'si'})
@@ -84,7 +84,7 @@ describe ForecastIO do
 
         it "sends through the default parameters" do
           expect(faraday).to receive(:get).with(
-            'https://api.forecast.io/forecast/abc123/1.2,3.4', {units: 'si'}
+            'https://api.darksky.net/forecast/abc123/1.2,3.4', {units: 'si'}
           ).and_return(response)
 
           ForecastIO.forecast(1.2, 3.4)
@@ -92,7 +92,7 @@ describe ForecastIO do
 
         it "sends through the merged parameters" do
           expect(faraday).to receive(:get).with(
-            'https://api.forecast.io/forecast/abc123/1.2,3.4',
+            'https://api.darksky.net/forecast/abc123/1.2,3.4',
             {units: 'si', exclude: 'daily'}
           ).and_return(response)
 
@@ -101,7 +101,7 @@ describe ForecastIO do
 
         it "overwrites default parameters when appropriate" do
           expect(faraday).to receive(:get).with(
-            'https://api.forecast.io/forecast/abc123/1.2,3.4',
+            'https://api.darksky.net/forecast/abc123/1.2,3.4',
             {units: 'imperial'}
           ).and_return(response)
 

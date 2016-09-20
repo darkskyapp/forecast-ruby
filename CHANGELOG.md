@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.1 (2016-09-20)
+
+* forecast.io to darksky.net api [#9](https://github.com/darkskyapp/forecast-ruby/pull/9)
+
 ## 2.0.0 (2013-07-05)
 
 * `Forecast::IO` is now `ForecastIO`. Thanks [@pat](https://github.com/pat).
