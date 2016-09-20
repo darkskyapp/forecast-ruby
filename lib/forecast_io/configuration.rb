@@ -1,7 +1,7 @@
 module ForecastIO
   module Configuration
     # Default API endpoint
-    DEFAULT_FORECAST_IO_API_ENDPOINT = 'https://api.forecast.io'
+    DEFAULT_FORECAST_IO_API_ENDPOINT = 'https://api.darksky.net'
 
     # Forecast API endpoint
     attr_writer :api_endpoint
