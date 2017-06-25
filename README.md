@@ -1,6 +1,6 @@
 # forecast_io
 
-[forecast.io](https://developer.darkskyapp.com/docs/v2) API wrapper in Ruby.
+[forecast.io](https://darksky.net/dev/docs) API wrapper in Ruby.
 
 ## Installation
 
@@ -120,4 +120,4 @@ end
 
 ## Copyright
 
-Copyright (c) 2013-2016 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2013-2017 David Czarnecki. See LICENSE.txt for further details.
