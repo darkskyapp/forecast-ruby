@@ -29,7 +29,7 @@ module ForecastIO
 
     # Build or get an HTTP connection object.
     def connection
-      @connection ||= Faraday.new
+      @connection ||= Faraday.new(request: { timeout: ForecastIO.timeout })
     end
 
     # Set an HTTP connection object.
