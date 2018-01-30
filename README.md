@@ -120,4 +120,4 @@ end
 
 ## Copyright
 
-Copyright (c) 2013-2017 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2013-2018 David Czarnecki. See LICENSE.txt for further details.
