@@ -6,6 +6,7 @@ describe ForecastIO::Configuration do
       ForecastIO.configure do |configuration|
         expect(configuration.api_endpoint).to eq(ForecastIO::Configuration::DEFAULT_FORECAST_IO_API_ENDPOINT)
         expect(configuration.api_key).to be_nil
+        expect(configuration.timeout).to be_nil
       end
     end
   end

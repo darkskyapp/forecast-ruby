@@ -9,6 +9,9 @@ module ForecastIO
     # API key
     attr_writer :api_key
 
+    # Request read timeout
+    attr_writer :timeout
+
     # Default parameters
     attr_accessor :default_params
 
@@ -18,6 +21,7 @@ module ForecastIO
     #
     #   ForecastIO.configure do |configuration|
     #     configuration.api_key = 'this-is-your-api-key'
+    #     configuration.timeout = 500
     #   end
     def configure
       yield self
@@ -31,6 +35,11 @@ module ForecastIO
     # API key
     def api_key
       @api_key
+    end
+
+    # Request read timeout
+    def timeout
+      @timeout
     end
   end
 end
