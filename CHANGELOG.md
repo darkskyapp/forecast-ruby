@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.2 (2018-01-30)
+
+* Add optional request read timeout to Faraday [Fixes #10](https://github.com/darkskyapp/forecast-ruby/issues/10)
+
 ## 2.0.1 (2016-09-20)
 
 * forecast.io to darksky.net api [#9](https://github.com/darkskyapp/forecast-ruby/pull/9)
